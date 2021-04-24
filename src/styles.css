@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+
+*, body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a, a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+/* bootstrap additional classes */
+
+.w-35 {
+    width: 35% !important;
+}
+
+.w-40 {
+    width: 40% !important;
+}
+
+
+/* login component */
+
+.login-card {
+    margin-top: 15% !important;
+}
