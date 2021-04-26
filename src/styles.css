@@ -15,6 +15,10 @@ input:focus, textarea:focus, select:focus{
 
 /* bootstrap additional classes */
 
+.w-30 {
+    width: 30% !important;
+}
+
 .w-35 {
     width: 35% !important;
 }
@@ -27,5 +31,28 @@ input:focus, textarea:focus, select:focus{
 /* login component */
 
 .login-card {
-    margin-top: 15% !important;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 24px;
+}
+
+.login-card .logo-container {
+    max-width: 50%;
+}
+
+.login-card .logo-container img {
+    width: 20%;
+    height: auto;
+}
+
+.login-card .logo-container .logo-content {
+    font-size: 14px;
+}
+
+.login-card .already-member {
+    font-size: 14px;
 }
