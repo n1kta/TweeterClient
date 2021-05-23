@@ -1,4 +1,4 @@
 export interface BaseAuth {
-    username: string;
+    userName: string;
     password: string;
 }

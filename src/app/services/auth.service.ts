@@ -10,7 +10,7 @@ import { map} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService {
+export class AuthService {
 
   private baseUrl: string = `${environment.apiUrl}/auth`;
   private currentUserSource = new ReplaySubject<User>(1);
@@ -42,13 +42,7 @@ export class AuthServiceService {
 
   public login(model: Login) {
     const url = `${this.baseUrl}/login`;
-    return this.http.post(url, model).pipe(
-      map((response: User) => {
-        if (response) {
-          this.setToken(response);
-        }
-      })
-    );
+    return this.http.post(url, model).toPromise();
   }
 
   public logout() {

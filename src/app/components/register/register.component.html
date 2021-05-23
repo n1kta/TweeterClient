@@ -11,10 +11,10 @@
                         There are multiple paths for you to choose</p>
                     <div class="mt-4">
                         <div class="mt-0">
-                            <input type="text" class="form-control" placeholder="Username" formControlName="username">
-                            <div class="text-danger" *ngIf="registartionForm.get('username').touched">
+                            <input type="text" class="form-control" placeholder="Username" formControlName="userName">
+                            <div class="text-danger" *ngIf="registartionForm.get('userName').touched">
                                 <ul class="pb-0">
-                                    <li *ngFor="let error of registartionForm.get('username').errors | keyvalue">{{error.key}}</li>
+                                    <li *ngFor="let error of registartionForm.get('userName').errors | keyvalue">{{error.key}}</li>
                                 </ul>
                             </div>
                         </div>
@@ -42,8 +42,8 @@
                                 </ul>
                             </div>
                         </div>
-                        <button [disabled]="!registartionForm.valid" class="btn btn-primary w-100 mt-4">Register</button>
-                        <div class="text-center mt-5 fw-light already-member">Adready a member? <a class="text-primary">Login</a></div>
+                        <button type="submit" [disabled]="!registartionForm.valid" class="btn btn-primary w-100 mt-4">Register</button>
+                        <div class="text-center mt-5 fw-light already-member">Adready a member? <a [routerLink]="['/login']" class="text-primary">Login</a></div>
                     </div>
                 </div>
             </form>
