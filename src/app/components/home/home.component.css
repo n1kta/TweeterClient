@@ -1,0 +1,20 @@
+hr {
+    margin: 8px 0;
+}
+
+.head {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: bold;
+}
+
+.tweet-smth {
+    border: 1px solid #fff;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 3%;
+}
+
+.tweet-submition {
+    padding-left: 5.5%;
+}

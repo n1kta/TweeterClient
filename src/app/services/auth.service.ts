@@ -14,7 +14,7 @@ export class AuthService {
 
   private baseUrl: string = `${environment.apiUrl}/auth`;
   private currentUserSource = new ReplaySubject<User>(1);
-  private currentUser$ = this.currentUserSource.asObservable();
+  public currentUser$ = this.currentUserSource.asObservable();
 
   public readonly USER = 'user';
 

@@ -1,0 +1,17 @@
+<nav class="container navbar d-flex justify-content-between">
+    <div class="logo">
+        <img src="../../../assets/img/tweeter.svg" alt="tweeter">
+    </div>
+    <div *ngIf="!isSettingsPage">
+        <ul class="nav-items">
+            <li class="item">Home</li>
+            <li class="item">Explore</li>
+            <li class="item">Bookmarks</li>
+        </ul>
+    </div>
+    <div class="mini-profile d-flex align-items-center" *ngIf="!isSettingsPage">
+        <img src="https://s3-alpha-sig.figma.com/img/5e0e/8d47/498741548cb5ed1dc33ed9cb80dd8860?Expires=1622419200&Signature=Mw2LsZw1gDpz3a1U1qQpX88p3ZiGtZjF~j8tydqMVPzT1icgZHDxFrHk8lrF6Tl5JB3y0MPpkVWW3MBvbqIMAQAuABg9tmxIWrqYs1MvwvjpeL5LaC~v-Aygb62P3FN1RHE3o6KNreFg-R7iDxZGTJsPiw1ckMxw8njejFEEldxvQE47RuhSsrqgJP3nqOizY2ifnSL1RnjmtSaoWpGnxXV3wFwUkQ8D7R0Txn9U1xlwnpvVG0U2IhWXdXYCZC86IiQ1KmNzDXlS-xRTsJaTORCq7ldsB0vf0Nobo3gpWYoac1Z4VZe2sxu8CfkxvOSiQX22rYlMqISdZa6Di3zyGg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                class="img-fluid avatar mr-3" alt="person">
+        <div>Nikita Lebediev <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+    </div>
+</nav>

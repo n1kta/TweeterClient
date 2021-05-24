@@ -1,0 +1,72 @@
+h1 {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 49px;
+    letter-spacing: -0.035em;
+}
+
+h4 {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    color: #BDBDBD;
+}
+
+h5 {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 25px;
+    letter-spacing: -0.035em;
+}
+
+.info {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: -0.035em;
+}
+
+.profile-head .title h3 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33px;
+    letter-spacing: -0.035em;
+    color: #000;
+}
+
+.profile-head .title div {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    color: #828282;
+}
+
+.edit-btn {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.035em;
+    color: #828282;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #828282;
+    padding: 1px 32px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background-color: #828282;
+    color: #fff;
+    transition: 500ms;
+}
