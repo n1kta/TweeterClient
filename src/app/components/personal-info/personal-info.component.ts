@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserInfo } from 'src/app/models/userInfo.model';
 
 @Component({
   selector: 'personal-info',
@@ -8,13 +9,18 @@ import { Router } from '@angular/router';
 })
 export class PersonalInfoComponent implements OnInit {
 
+  currentUserInfo: UserInfo;
+
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
   }
 
   public editUserProfile() {
     this.router.navigate(['edit-user-profile']);
   }
 
+  onGetCurrentUser(event) {
+    this.currentUserInfo = event;
+  }
 }

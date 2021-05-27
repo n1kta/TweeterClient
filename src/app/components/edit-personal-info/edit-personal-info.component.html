@@ -1,8 +1,54 @@
-<navbar [isSettingsPage]="true"></navbar>
-<div class="container">
+<navbar (onGetCurrentUser)="onGetCurrentUser($event)"></navbar>
+<div class="container" *ngIf="currentUserInfo">
     <div class="row">
-        <div class="col-12">
-            <div class="back-btn"> Back</div>
+        <div class="col-12 mt-5">
+            <div class="back-btn w-75 m-auto" (click)="moveBack()"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mt-2">
+            <form class="card w-75 m-auto mb-5" [formGroup]="editForm" (ngSubmit)="submit()">
+                <div class="card-body p-5">
+                    <div class="title">
+                        <h1 class="mb-0">Change Info</h1>
+                        <span>Changes will be reflected to every services</span>
+                    </div>
+                    <div class="my-photo d-flex mt-4">
+                        <img src="" alt="my-photo" class="mr-2">
+                        <div class="change-photo d-flex align-items-center">CHANGE PHOTO</div>
+                    </div>
+                    <div class="body">
+                        <div class="mt-4">
+                            <label for="Name">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your full name..." formControlName="fullName">
+                            <div class="text-danger" *ngIf="editForm.get('fullName').touched">
+                                <ul class="pb-0">
+                                    <li *ngFor="let error of editForm.get('fullName').errors | keyvalue">{{error.key}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <label for="Name">Bio</label>
+                            <textarea class="form-control" placeholder="Enter your bio..." formControlName="bio"></textarea>
+                            <div class="text-danger" *ngIf="editForm.get('bio').touched">
+                                <ul class="pb-0">
+                                    <li *ngFor="let error of editForm.get('bio').errors | keyvalue">{{error.key}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <label for="Name">Phone</label>
+                            <input type="text" class="form-control" placeholder="Enter your phone..." formControlName="phone">
+                            <div class="text-danger" *ngIf="editForm.get('phone').touched">
+                                <ul class="pb-0">
+                                    <li *ngFor="let error of editForm.get('phone').errors | keyvalue">{{error.key}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-4 mb-0" [disabled]="!editForm.valid">Save</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

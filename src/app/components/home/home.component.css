@@ -2,6 +2,10 @@ hr {
     margin: 8px 0;
 }
 
+textarea {
+    border: none !important;
+}
+
 .head {
     font-size: 12px;
     line-height: 18px;

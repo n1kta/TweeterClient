@@ -12,4 +12,6 @@ export abstract class BaseFormBuilder {
     abstract markAsTouch(): void;
 
     abstract submit(): void;
+
+    abstract hasUnsavedData(): boolean;
 }

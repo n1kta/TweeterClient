@@ -19,6 +19,14 @@
                             </div>
                         </div>
                         <div class="mt-3">
+                            <input type="text" class="form-control" placeholder="Full Name" formControlName="fullName">
+                            <div class="text-danger" *ngIf="registartionForm.get('fullName').touched">
+                                <ul class="pb-0">
+                                    <li *ngFor="let error of registartionForm.get('fullName').errors | keyvalue">{{error.key}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-3">
                             <input type="text" class="form-control" placeholder="Email" formControlName="email">
                             <div class="text-danger" *ngIf="registartionForm.get('email').touched">
                                 <ul class="pb-0">
@@ -42,7 +50,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <button type="submit" [disabled]="!registartionForm.valid" class="btn btn-primary w-100 mt-4">Register</button>
+                        <button type="submit" [disabled]="!registartionForm.valid" class="btn btn-primary w-100 mt-4">Registeration</button>
                         <div class="text-center mt-5 fw-light already-member">Adready a member? <a [routerLink]="['/login']" class="text-primary">Login</a></div>
                     </div>
                 </div>

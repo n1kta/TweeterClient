@@ -1,0 +1,51 @@
+.title h1 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33px;
+    letter-spacing: -0.035em;
+    color: #000;
+}
+
+.title span {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    color: #828282;
+}
+
+.change-photo {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    color: #828282;
+}
+
+label {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    color: #4F4F4F;
+}
+
+input {
+    border-color: #828282;
+}
+
+textarea {
+    border-color: #828282;
+}
+
+.back-btn {
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    color: #2F80ED;
+}

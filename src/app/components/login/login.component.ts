@@ -71,4 +71,7 @@ export class LoginComponent extends BaseFormBuilder implements OnInit {
     }
   }
 
+  hasUnsavedData(): boolean {
+    throw new Error('Method not implemented.');
+  }
 }

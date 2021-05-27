@@ -4,6 +4,10 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
+a {
+    color: #000;
+}
+
 a, a:hover {
     cursor: pointer;
     text-decoration: none;
@@ -13,16 +17,8 @@ ul, li {
     list-style: none;
 }
 
-textarea {
-    border: none !important;
-}
-
 hr {
     color: #E0E0E0;
-}
-
-input {
-    border-color: #F2F2F2 !important;
 }
 
 input:focus, textarea:focus, select:focus{

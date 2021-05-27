@@ -22,7 +22,14 @@ export class RegisterComponent extends BaseFormBuilder implements OnInit {
     userName: null,
     email: null,
     password: null,
-    repeatPassword: null
+    repeatPassword: null,
+    userProfile: {
+      id: null,
+      fullName: null,
+      bio: null,
+      photo: null,
+      phone: null
+    }
   };
 
   constructor(private _fb: FormBuilder,
@@ -41,6 +48,7 @@ export class RegisterComponent extends BaseFormBuilder implements OnInit {
     this.registartionForm = this.fb.group({
       userName: new FormControl('', [Validators.required,
       Validators.minLength(RegistrationConstant.MIN_USERNAME_LENGTH)]),
+      fullName: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required,
       Validators.email]),
       password: new FormControl('', [Validators.required,
@@ -64,6 +72,8 @@ export class RegisterComponent extends BaseFormBuilder implements OnInit {
     if (isValid) {
       Object.keys(this.registartionForm.controls).map(key => this.model[key] = this.registartionForm.controls[key].value);
       
+      this.model.userProfile.fullName = this.registartionForm.controls['fullName']?.value;
+
       try {
         const response = await this.authService.registration(this.model) as ResultModel;
         
@@ -77,5 +87,9 @@ export class RegisterComponent extends BaseFormBuilder implements OnInit {
         console.error(e);
       }
     }
+  }
+
+  hasUnsavedData(): boolean {
+    throw new Error('Method not implemented.');
   }
 }
