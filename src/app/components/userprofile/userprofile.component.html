@@ -1,0 +1,59 @@
+<navbar (onGetCurrentUser)="onGetCurrentUser($event)"></navbar>
+<main class="main" *ngIf="user">
+    <div class="portfolio-logo">
+        <img src="" alt="">
+        <div class="container col-12 portfolio-head d-flex">
+            <div class="portfolio-main-image">
+                <img src="https://s3-alpha-sig.figma.com/img/e702/6457/49c8abf0eabd92fb663acc1f6e48907a?Expires=1623024000&Signature=Fe58dScrUiQjvyWTnzUCA~3KfyT4RZ-Zf7Io7-gmgaIcKyLq4tKA3xWLzumIwJqkVJgebHof-I9g8kUQfcKcVoynpODIqC5Sz2pGftqTBbPmkyPOTGLZRUMrQ2jdQ6b61tR3DqqL~iJr1CIWo7vHh~Ac6hhFOqgB-VYKEc3e1-OTYtyGbWRaj8G7nUii8Ue6fTX8GAa3Ls~qqGacWA2B~FT6Dls6eu9jKQrVMAhjhkF6fjs1WdP1vNqi3DxGo6~g5OLlXKUiLyjetxDgBY4hzs4mRxhEqisYjemzwfO3TPnqQ2-OVFynlF87Cy~anFLIeV5-OLn~aFu-5rT4ojbsfQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                    alt="person">
+            </div>
+            <div class="portfolio-info w-100">
+                <div class="main-info d-flex mt-4 justify-content-around">
+                    <div class="fio d-flex align-items-center">
+                        <h4 class="mb-0">{{user.userProfile.fullName}}</h4>
+                        <div class="following-followers-info">{{user.following}} <span class="text-secondary">Following</span>
+                            {{user.followers}} <span class="text-secondary">Followers</span></div>
+                    </div>
+                    <button *ngIf="!isCurrentUserProfile()" class="follow btn btn-primary">Follow</button>
+                </div>
+                <div class="description mt-4">
+                    {{user.userProfile.bio}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <div class="tweets-area">
+                    <ul class="tweets-menu w-100">
+                        <li class="p-3">Tweets</li>
+                        <li class="p-3">Tweets & replies</li>
+                        <li class="p-3">Media</li>
+                        <li class="p-3">Likes</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-7">
+                <div class="post-area">
+                    <div class="post-profile">
+
+                    </div>
+                    <div class="post-description">
+
+                    </div>
+                    <div class="post-info">
+
+                    </div>
+                    <div class="post-action">
+
+                    </div>
+                    <div class="post-comment">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

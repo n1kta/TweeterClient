@@ -4,7 +4,7 @@ import { fromEventPattern, ReplaySubject, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Login } from '../models/auth/login.model';
 import { Registration } from '../models/auth/registration.model';
-import { User } from '../models/user.model';
+import { TokenUser } from '../models/tokenUser.model';
 import { map} from 'rxjs/operators';
 
 @Injectable({
@@ -13,7 +13,7 @@ import { map} from 'rxjs/operators';
 export class AuthService {
 
   private baseUrl: string = `${environment.apiUrl}/auth`;
-  private currentUserSource = new ReplaySubject<User>(1);
+  private currentUserSource = new ReplaySubject<TokenUser>(1);
   public currentUser$ = this.currentUserSource.asObservable();
 
   public readonly USER = 'user';
@@ -25,7 +25,7 @@ export class AuthService {
     return token;
   }
 
-  public setToken(user: User) {
+  public setToken(user: TokenUser) {
     localStorage.setItem(this.USER, JSON.stringify(user));
     this.currentUserSource.next(user);
   }

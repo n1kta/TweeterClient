@@ -6,13 +6,15 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
 import { EditPersonalInfoComponent } from './components/edit-personal-info/edit-personal-info.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 const routes: Routes = [
   { path: 'registration', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'user-profile', component: PersonalInfoComponent },
-  { path: 'edit-user-profile', component: EditPersonalInfoComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'my-profile', component: PersonalInfoComponent },
+  { path: 'edit-my-profile', component: EditPersonalInfoComponent },
+  { path: 'profile/:username', component: UserprofileComponent }
 ];
 
 @NgModule({

@@ -1,8 +1,9 @@
 import { UserProfile } from "./userProfile.model";
 
-export interface UserInfo {
+export interface ViewProfile {
     id: number;
     userName: string;
-    email: string;
     userProfile: UserProfile;
+    following: number;
+    followers: number;
 }

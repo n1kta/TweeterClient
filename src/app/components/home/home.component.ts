@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BaseFormBuilder } from 'src/app/helpers/baseFormBuilder';
-import { UserInfo } from 'src/app/models/userInfo.model';
+import { ResultModel } from 'src/app/helpers/models/result.model';
+import { Tweet } from 'src/app/models/tweet.model';
+import { User } from 'src/app/models/user.model';
+import { TweetService } from 'src/app/services/tweet.service';
 
 @Component({
   selector: 'app-home',
@@ -13,10 +16,16 @@ export class HomeComponent extends BaseFormBuilder implements OnInit {
   private fb: FormBuilder;
   public tweetForm: FormGroup;
 
-  currentUserInfo: UserInfo;
+  currentUserInfo: User;
+
+  model: Tweet = {
+    description: null,
+    photo: null
+  };
 
   constructor(private _fb: FormBuilder,
-    private router: Router) {
+    private router: Router,
+    private tweetService: TweetService) {
     super(_fb);
     this.fb = _fb;
   }
@@ -28,19 +37,40 @@ export class HomeComponent extends BaseFormBuilder implements OnInit {
   onGetCurrentUser(event) {
     this.currentUserInfo = event;
   }
-  
+
   setUp(): void {
     this.tweetForm = this.fb.group({
-      tweet: new FormControl('', [Validators.required])
+      description: new FormControl('', [Validators.required])
     })
   }
 
   markAsTouch(): void {
-    throw new Error('Method not implemented.');
+    Object.keys(this.tweetForm.controls).map(x => this.tweetForm.controls[x].markAsTouched());
   }
-  submit(): void {
-    throw new Error('Method not implemented.');
+
+  async submit() {
+    this.markAsTouch();
+
+    const isValid = Object.keys(this.tweetForm.controls).every(x => !!this.tweetForm?.controls[x]?.value);
+
+    if (isValid) {
+      Object.keys(this.tweetForm.controls).map(key => this.model[key] = this.tweetForm.controls[key].value);
+
+      try {
+        const response = await this.tweetService.create(this.currentUserInfo.id, this.model) as ResultModel;
+        
+        if (response.isSuccess) {
+          this.tweetForm.reset();
+        } else {
+          // modal window with error
+        }
+
+      } catch (e) {
+        console.error(e);
+      }
+    }
   }
+
   hasUnsavedData(): boolean {
     throw new Error('Method not implemented.');
   }

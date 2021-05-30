@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { BaseFormBuilder } from 'src/app/helpers/baseFormBuilder';
 import { RegistrationConstant } from 'src/app/helpers/constants/registration.constant';
-import { UserInfo } from 'src/app/models/userInfo.model';
+import { User } from 'src/app/models/user.model';
 import { UserProfile } from 'src/app/models/userProfile.model';
 import { UserProfileService } from 'src/app/services/userProfile.service';
 
@@ -16,7 +16,7 @@ export class EditPersonalInfoComponent extends BaseFormBuilder implements OnInit
   private fb: FormBuilder;
   public editForm: FormGroup;
 
-  currentUserInfo: UserInfo;
+  currentUserInfo: User;
   model: UserProfile = {
     id: null,
     fullName: null,

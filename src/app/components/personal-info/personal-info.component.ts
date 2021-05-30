@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserInfo } from 'src/app/models/userInfo.model';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'personal-info',
@@ -9,7 +9,7 @@ import { UserInfo } from 'src/app/models/userInfo.model';
 })
 export class PersonalInfoComponent implements OnInit {
 
-  currentUserInfo: UserInfo;
+  currentUserInfo: User;
 
   constructor(private router: Router) { }
 

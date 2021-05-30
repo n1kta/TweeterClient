@@ -1,0 +1,104 @@
+.main {
+    background-color: #F2F2F2;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.portfolio-logo {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: url(../../../assets/img/portfolio-logo.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.portfolio-head {
+    border: 1px solid none;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+    background-color: #fff;
+    width: 60%;
+    height: 163px;
+    position: absolute;
+    left: 20%;
+    bottom: -120px;
+}
+
+.portfolio-head .portfolio-main-image {
+    position: absolute;
+    top: -25%;
+    max-width: 152px;
+    max-height: 152px;
+    border: 1px solid none;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 5px;
+    margin: 0 20px;
+}
+
+.portfolio-head .portfolio-main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.portfolio-head .portfolio-info {
+    margin-left: 15%;
+}
+
+.follow {
+    width: 101px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-head .portfolio-info .main-info .fio {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.portfolio-head .portfolio-info .main-info .fio h4 {
+    margin-right: 26px;
+}
+
+.portfolio-head .portfolio-info .main-info .fio .following-followers-info {
+    margin-top: 5px;
+}
+
+.portfolio-head .portfolio-info .description {
+    font-size: 18px;
+    color: #828282;
+    width: 55%;
+    margin-left: 4.3rem;
+}
+
+.tweets-area {
+    margin-top: 30% !important;
+    padding-left: 37% !important;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.tweets-area .tweets-menu {
+    border: 1px solid none;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+    background-color: #fff;
+    width: 40%;
+}
+
+.tweets-area .tweets-menu li:hover {
+    cursor: pointer;
+    color: #2F80ED;
+}
+
+.post-area {
+    margin-top: 30% !important;
+    display: flex;
+    justify-content: flex-start;
+}

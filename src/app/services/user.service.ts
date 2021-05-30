@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { UserInfo } from '../models/userInfo.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +14,9 @@ export class UserService {
 
   public getCurrentUser(){
       return this.http.get(`${this.baseUrl}/currentUser`).toPromise();
+  }
+
+  getViewProfileByUserName(userName: string) {
+    return this.http.get(`${this.baseUrl}/getViewProfile/${userName}`).toPromise();
   }
 }

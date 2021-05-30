@@ -13,6 +13,7 @@ import { TweetsComponent } from './components/tweets/tweets.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
 import { EditPersonalInfoComponent } from './components/edit-personal-info/edit-personal-info.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EditPersonalInfoComponent } from './components/edit-personal-info/edit-
     TweetsComponent,
     CommentsComponent,
     PersonalInfoComponent,
-    EditPersonalInfoComponent
+    EditPersonalInfoComponent,
+    UserprofileComponent
   ],
   imports: [
     BrowserModule,

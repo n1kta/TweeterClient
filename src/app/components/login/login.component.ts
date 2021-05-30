@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { BaseFormBuilder } from 'src/app/helpers/baseFormBuilder';
 import { RegistrationConstant } from 'src/app/helpers/constants/registration.constant';
 import { Login } from 'src/app/models/auth/login.model';
-import { User } from 'src/app/models/user.model';
+import { TokenUser } from 'src/app/models/tokenUser.model';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -56,7 +56,7 @@ export class LoginComponent extends BaseFormBuilder implements OnInit {
       Object.keys(this.loginForm.controls).map(key => this.model[key] = this.loginForm.controls[key].value);
 
       try {
-        const reponse = await this.authService.login(this.model) as User;
+        const reponse = await this.authService.login(this.model) as TokenUser;
         
         if (reponse?.token) {
           this.authService.setToken(reponse);

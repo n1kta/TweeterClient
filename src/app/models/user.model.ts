@@ -1,3 +1,8 @@
+import { UserProfile } from "./userProfile.model";
+
 export interface User {
-    token: string;
+    id: number;
+    userName: string;
+    email: string;
+    userProfile: UserProfile;
 }

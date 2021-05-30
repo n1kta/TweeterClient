@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { UserInfo } from 'src/app/models/userInfo.model';
+import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -9,18 +9,18 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NavbarComponent implements OnInit {
 
-  userInfo: UserInfo;
+  userInfo: User;
 
   @Input()
   isSettingsPage: boolean = false;
 
   @Output()
-  onGetCurrentUser = new EventEmitter<UserInfo>();
+  onGetCurrentUser = new EventEmitter<User>();
 
   constructor(private userService: UserService) { }
 
   async ngOnInit() {
-    this.userInfo = await this.userService.getCurrentUser() as UserInfo;
+    this.userInfo = await this.userService.getCurrentUser() as User;
 
     if (this.userInfo) {
       this.onGetCurrentUser.emit(this.userInfo);
