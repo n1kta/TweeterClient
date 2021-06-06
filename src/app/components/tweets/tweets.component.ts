@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Tweet } from 'src/app/models/tweet.model';
+import { TweetService } from 'src/app/services/tweet.service';
 
 @Component({
   selector: 'tweets',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TweetsComponent implements OnInit {
 
-  constructor() { }
+  tweets: Tweet[];
 
-  ngOnInit(): void {
+  @Input() userProfileId: number;
+
+  constructor(private tweetService: TweetService) { }
+
+  async ngOnInit() {
+    this.tweets = await this.tweetService.getTweetsFollowers(this.userProfileId) as Tweet[];
   }
 
 }

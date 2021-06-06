@@ -4,6 +4,6 @@ export interface ViewProfile {
     id: number;
     userName: string;
     userProfile: UserProfile;
-    following: number;
     followers: number;
+    followings: number;
 }

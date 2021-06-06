@@ -57,6 +57,10 @@
     justify-content: center;
 }
 
+.portfolio-head .portfolio-info .main-info {
+    margin-left: 9%;
+}
+
 .portfolio-head .portfolio-info .main-info .fio {
     font-size: 12px;
     font-weight: 600;

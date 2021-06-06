@@ -8,13 +8,13 @@
                     alt="person">
             </div>
             <div class="portfolio-info w-100">
-                <div class="main-info d-flex mt-4 justify-content-around">
+                <div class="main-info d-flex mt-4">
                     <div class="fio d-flex align-items-center">
                         <h4 class="mb-0">{{user.userProfile.fullName}}</h4>
-                        <div class="following-followers-info">{{user.following}} <span class="text-secondary">Following</span>
+                        <div class="following-followers-info">{{user.followings}} <span class="text-secondary">Following</span>
                             {{user.followers}} <span class="text-secondary">Followers</span></div>
                     </div>
-                    <button *ngIf="!isCurrentUserProfile()" class="follow btn btn-primary">Follow</button>
+                    <button *ngIf="!isCurrentUserProfile()" (click)="follow()" class="follow btn btn-primary m-auto">{{isFollowed ? 'Unfollow' : 'Follow'}}</button>
                 </div>
                 <div class="description mt-4">
                     {{user.userProfile.bio}}

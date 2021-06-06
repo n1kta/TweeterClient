@@ -19,4 +19,11 @@ export class TweetService {
             return this.http.post(url, model).toPromise();
         }
     }
+
+    getTweetsFollowers(userProfileId: number) {
+        if (userProfileId) {
+            const url = `${this.baseUrl}/getTweetsFollowers/${userProfileId}`;
+            return this.http.get(url).toPromise();
+        }
+    }
 }

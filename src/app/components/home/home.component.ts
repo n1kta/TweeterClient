@@ -18,9 +18,13 @@ export class HomeComponent extends BaseFormBuilder implements OnInit {
 
   currentUserInfo: User;
 
+  imageBase64: any;
+
   model: Tweet = {
     description: null,
-    photo: null
+    photo: null,
+    userProfile: null,
+    userName: null
   };
 
   constructor(private _fb: FormBuilder,
@@ -55,10 +59,12 @@ export class HomeComponent extends BaseFormBuilder implements OnInit {
 
     if (isValid) {
       Object.keys(this.tweetForm.controls).map(key => this.model[key] = this.tweetForm.controls[key].value);
+      this.model.userName = this.currentUserInfo.userName;
+      this.model.photo = this.imageBase64.split(',')[1] ?? null;
 
       try {
         const response = await this.tweetService.create(this.currentUserInfo.id, this.model) as ResultModel;
-        
+
         if (response.isSuccess) {
           this.tweetForm.reset();
         } else {
@@ -73,5 +79,20 @@ export class HomeComponent extends BaseFormBuilder implements OnInit {
 
   hasUnsavedData(): boolean {
     throw new Error('Method not implemented.');
+  }
+
+  async getFile(event: any) {
+    if (event.length === 0) {
+      return;
+    }
+
+    const file: File = event.files[0];
+    const reader: FileReader = new FileReader();
+
+    reader.onload = async (e) => {
+      this.imageBase64 = await reader.result;
+    };
+
+    reader.readAsDataURL(file);
   }
 }
