@@ -21,10 +21,13 @@ export class HomeComponent extends BaseFormBuilder implements OnInit {
   imageBase64: any;
 
   model: Tweet = {
+    id: null,
     description: null,
     photo: null,
     userProfile: null,
-    userName: null
+    userName: null,
+    likes: null,
+    isLiked: null
   };
 
   constructor(private _fb: FormBuilder,
