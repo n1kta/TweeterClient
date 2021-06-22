@@ -53,6 +53,12 @@ input:focus, textarea:focus, select:focus{
     pointer-events: none;
 }
 
+.time {
+    font-size: 12px;
+    line-height: 16px;
+    color: #BDBDBD;
+}
+
 /* bootstrap additional classes */
 
 .mr-2 {
@@ -259,4 +265,17 @@ input:focus, textarea:focus, select:focus{
     margin-top: 30% !important;
     display: flex;
     justify-content: flex-start;
+}
+
+.comment-card {
+    background-color: #FAFAFA;
+    border: 1px solid none;
+    border-radius: 8px;
+}
+
+.comment-user {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 21px;
+    color: #000;
 }

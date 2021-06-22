@@ -6,7 +6,7 @@
             </div>
             <div>
                 <h3 class="who-tweet">{{tweet.userName}}</h3>
-                <div class="tweet-date">24 August at 20:43</div>
+                <div class="tweet-date">{{tweet.addedDate | date: 'MMM d, y'}}</div>
             </div>
         </div>
         <div class="tweet-description mt-3">
@@ -37,6 +37,9 @@
             </div>
         </div>
         <hr>
-        <comments></comments>
+        <comments [tweetId]="tweet.id"
+                [userProfileId]="userProfileId"
+                [comments]="tweet.comments"
+                (onAddComment)="onAddComment($event)"></comments>
     </div>
 </div>

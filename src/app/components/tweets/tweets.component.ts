@@ -38,13 +38,19 @@ export class TweetsComponent implements OnInit {
       const response = await this.tweetService.toggleLike(this.like) as ResultModel;
 
       if (response.isSuccess) {
-        // this.tweets = await this.getTweets();
         tweet.isLiked = !tweet.isLiked;
         tweet.likes = tweet.isLiked ? ++tweet.likes: --tweet.likes;
       }
     }
     catch (e) {
       console.error(e);
+    }
+  }
+
+  async onAddComment(event) {
+    if (event) {
+      debugger;
+      this.tweets = await this.getTweets();
     }
   }
 }

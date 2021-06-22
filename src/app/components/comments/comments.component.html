@@ -4,12 +4,12 @@
             <img src="../../../assets/img/default.jpg"
                 class="img-fluid avatar mr-3" alt="person">
         </div>
-        <div class="tweet-reply w-100">
-            <input placeholder="Tweet your reply" class="form-control w-100 p-2">
+        <div class="tweet-reply w-100" (keyup)="addComment($event)">
+            <input placeholder="Tweet your reply" class="form-control w-100 p-2" name="description" [(ngModel)]="model.description">
         </div>
     </div>
-    <!-- <hr> -->
-    <div class="all-comments">
-        <!-- Comment component -->
+    <hr>
+    <div class="all-comments mt-2">
+        <comments-list [comments]="comments"></comments-list>
     </div>
 </div>

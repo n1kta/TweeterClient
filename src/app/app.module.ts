@@ -14,6 +14,7 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
 import { EditPersonalInfoComponent } from './components/edit-personal-info/edit-personal-info.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
+import { CommentsListComponent } from './components/comments-list/comments-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserprofileComponent } from './components/userprofile/userprofile.compo
     CommentsComponent,
     PersonalInfoComponent,
     EditPersonalInfoComponent,
-    UserprofileComponent
+    UserprofileComponent,
+    CommentsListComponent
   ],
   imports: [
     BrowserModule,

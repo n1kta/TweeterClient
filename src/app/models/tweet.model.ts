@@ -6,6 +6,8 @@ export interface Tweet {
     photo: string;
     userName: string;
     userProfile: UserProfile[];
+    comment: Comment[];
+    addedDate: Date;
     likes: number;
     isLiked: boolean;
 }

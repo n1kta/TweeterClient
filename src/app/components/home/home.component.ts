@@ -25,9 +25,11 @@ export class HomeComponent extends BaseFormBuilder implements OnInit {
     description: null,
     photo: null,
     userProfile: null,
+    comment: null,
     userName: null,
     likes: null,
-    isLiked: null
+    isLiked: null,
+    addedDate: null
   };
 
   constructor(private _fb: FormBuilder,

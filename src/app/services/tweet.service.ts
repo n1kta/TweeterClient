@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
+import { Comment } from "../models/comment.model";
 import { Like } from "../models/like.model";
 import { Tweet } from "../models/tweet.model";
 
@@ -31,6 +32,13 @@ export class TweetService {
     toggleLike(model: Like) {
         if (model.destinationId && model.userProfileId) {
             const url = `${this.baseUrl}/like`;
+            return this.http.post(url, model).toPromise();
+        }
+    }
+
+    addComment(model: Comment) {
+        if (model.userProfile.id && model.tweet.id) {
+            const url = `${this.baseUrl}/addComment`;
             return this.http.post(url, model).toPromise();
         }
     }
