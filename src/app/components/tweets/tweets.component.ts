@@ -49,7 +49,6 @@ export class TweetsComponent implements OnInit {
 
   async onAddComment(event) {
     if (event) {
-      debugger;
       this.tweets = await this.getTweets();
     }
   }

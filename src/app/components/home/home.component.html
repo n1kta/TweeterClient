@@ -22,8 +22,16 @@
                                     </label>
                                     <input #file id="file-input" type="file" (change)="getFile(file)" />
                                 </div>
-                                <div class="p-3 pt-0 pr-0 pb-0">
-                                    <i class="fa fa-globe" aria-hidden="true"></i> Everyone can reply
+                                <div class="can-replay p-3 pt-0 pr-0 pb-0" (click)="isOpen = !isOpen;">
+                                    <i class="fa fa-globe" aria-hidden="true"></i> {{model.isEveryoneMode ? 'Everyone' : 'People you follow'}} can reply
+                                </div>
+                                <div class="tweet-mode" *ngIf="isOpen">
+                                    <h5>Who can reply?</h5>
+                                    <span>Choose who can reply to this Tweet.</span>
+                                    <div class="tweetMode mt-2">
+                                        <div class="p-2" (click)="model.isEveryoneMode = true; isOpen = false;"><i class="fa fa-globe" aria-hidden="true"></i> Everyone</div>
+                                        <div class="p-2" (click)="model.isEveryoneMode = false; isOpen = false;"><i class="fa fa-users" aria-hidden="true"></i> People you follow</div>
+                                    </div>
                                 </div>
                             </div>
                             <button type="submit" [disabled]="!tweetForm.valid"

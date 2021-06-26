@@ -22,3 +22,42 @@ textarea {
 .tweet-submition {
     padding-left: 5.5%;
 }
+
+.can-replay {
+    cursor: pointer;
+}
+
+.tweet-mode {
+    position: absolute;
+    border: 1px solid #E0E0E0;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    left: 21.8%;
+    top: 32%;
+    transition: 0.5ms;
+    color: #000;
+}
+
+.tweetMode div {
+    cursor: pointer;
+}
+
+.tweetMode div:hover {
+    border: 1px solid none;
+    border-radius: 8px;
+    background-color: #F2F2F2;
+}
+
+.tweet-mode h5 {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: bolder;
+    padding: 0;
+    margin: 0;
+}
+
+.tweet-mode span {
+    font-size: 12px;
+    color: #828282;
+}

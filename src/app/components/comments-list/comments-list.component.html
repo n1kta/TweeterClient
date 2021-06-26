@@ -1,4 +1,4 @@
-<div class="d-flex align-items-start" *ngFor="let comment of comments">
+<div class="d-flex align-items-start mb-2" *ngFor="let comment of comments">
     <div>
         <img src="../../../assets/img/default.jpg" class="img-fluid avatar mr-3" alt="person">
     </div>
@@ -7,6 +7,8 @@
             <div class="comment-user">{{comment.userProfile.fullName}} <span class="time p-5">{{comment.addedDate | date: 'MMM d, y'}}</span></div>
             <div>{{comment.description}}</div>
         </div>
-        <div>Likes</div>
+        <div class="comment-list-like pt-2" (click)="like(comment)">
+            <span [class.text-danger]="comment.isLiked"><i class="fa fa-heart-o" aria-hidden="true"></i> Like</span> <span class="p-2">{{comment.likes + ' likes'}}</span>
+        </div>
     </div>
 </div>

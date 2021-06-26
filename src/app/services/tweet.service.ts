@@ -35,11 +35,4 @@ export class TweetService {
             return this.http.post(url, model).toPromise();
         }
     }
-
-    addComment(model: Comment) {
-        if (model.userProfile.id && model.tweet.id) {
-            const url = `${this.baseUrl}/addComment`;
-            return this.http.post(url, model).toPromise();
-        }
-    }
 }

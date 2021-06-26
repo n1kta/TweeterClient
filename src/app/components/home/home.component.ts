@@ -29,8 +29,11 @@ export class HomeComponent extends BaseFormBuilder implements OnInit {
     userName: null,
     likes: null,
     isLiked: null,
-    addedDate: null
+    addedDate: null,
+    isEveryoneMode: true
   };
+
+  isOpen: boolean = false;
 
   constructor(private _fb: FormBuilder,
     private router: Router,
@@ -49,7 +52,7 @@ export class HomeComponent extends BaseFormBuilder implements OnInit {
 
   setUp(): void {
     this.tweetForm = this.fb.group({
-      description: new FormControl('', [Validators.required])
+      description: new FormControl('', [Validators.required]),
     })
   }
 
@@ -65,7 +68,7 @@ export class HomeComponent extends BaseFormBuilder implements OnInit {
     if (isValid) {
       Object.keys(this.tweetForm.controls).map(key => this.model[key] = this.tweetForm.controls[key].value);
       this.model.userName = this.currentUserInfo.userName;
-      this.model.photo = this.imageBase64.split(',')[1] ?? null;
+      this.model.photo = this.imageBase64?.split(',')[1] ?? null;
 
       try {
         const response = await this.tweetService.create(this.currentUserInfo.id, this.model) as ResultModel;

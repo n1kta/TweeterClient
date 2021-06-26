@@ -10,4 +10,5 @@ export interface Tweet {
     addedDate: Date;
     likes: number;
     isLiked: boolean;
+    isEveryoneMode: boolean;
 }
