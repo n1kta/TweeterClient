@@ -48,7 +48,7 @@ export class UserprofileComponent implements OnInit {
 
       const response = await this.userProfileService.follow(model) as ResultModel;
 
-      if (response.isSuccess) {
+      if (response.succeeded) {
         await this.howManyFollowerFollowing();
       } else {
         // modal window with error

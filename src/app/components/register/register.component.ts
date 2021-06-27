@@ -77,7 +77,7 @@ export class RegisterComponent extends BaseFormBuilder implements OnInit {
       try {
         const response = await this.authService.registration(this.model) as ResultModel;
         
-        if (response.isSuccess) {
+        if (response.succeeded) {
           this.router.navigate(['login']);
         } else {
           // modal window with error

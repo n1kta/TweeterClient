@@ -31,7 +31,7 @@ export class CommentsListComponent implements OnInit {
 
     try {
       const response = await this.commentService.toggleLike(this.model) as ResultModel;
-      if (response.isSuccess) {
+      if (response.succeeded) {
         comment.isLiked = !comment.isLiked;
         comment.likes = comment.isLiked ? ++comment.likes: --comment.likes;
       }

@@ -37,7 +37,7 @@ export class TweetsComponent implements OnInit {
     try {
       const response = await this.tweetService.toggleLike(this.like) as ResultModel;
 
-      if (response.isSuccess) {
+      if (response.succeeded) {
         tweet.isLiked = !tweet.isLiked;
         tweet.likes = tweet.isLiked ? ++tweet.likes: --tweet.likes;
       }

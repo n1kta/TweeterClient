@@ -73,7 +73,7 @@ export class HomeComponent extends BaseFormBuilder implements OnInit {
       try {
         const response = await this.tweetService.create(this.currentUserInfo.id, this.model) as ResultModel;
 
-        if (response.isSuccess) {
+        if (response.succeeded) {
           this.tweetForm.reset();
         } else {
           // modal window with error

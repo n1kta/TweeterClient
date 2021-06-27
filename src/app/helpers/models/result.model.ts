@@ -1,4 +1,4 @@
 export interface ResultModel {
-    isSuccess: boolean;
-    errorMessage: string;
+    succeeded: boolean;
+    message: string;
 }

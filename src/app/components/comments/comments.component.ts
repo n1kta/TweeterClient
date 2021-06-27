@@ -39,7 +39,7 @@ export class CommentsComponent implements OnInit {
     if (event.keyCode === 13 && this.model.description) {
       try {
         const response = await this.commentService.addComment(this.model) as ResultModel;
-        if (response.isSuccess) {
+        if (response.succeeded) {
           this.model.description = null;
           this.onAddComment.emit(true);
         }
